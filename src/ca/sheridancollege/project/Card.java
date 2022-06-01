@@ -8,7 +8,7 @@ package ca.sheridancollege.project;
 /**
  * A class to be used as the base Card class for the project. Must be general enough to be instantiated for any Card
  * game. Students wishing to add to the code should remember to add themselves as a modifier.
- * @author Benedict Leung
+ * @author Benedict Leung ID: 991329385
  * @author 
  */
 public abstract class Card {
