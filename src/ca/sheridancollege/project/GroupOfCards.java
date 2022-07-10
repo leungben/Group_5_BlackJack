@@ -29,9 +29,9 @@ import java.util.Collections;
 public class GroupOfCards {
 
     //The group of cards, stored in an ArrayList
-    private ArrayList<Card> cards;
+    private ArrayList<StandardCard> cards= new ArrayList<StandardCard>();
     private int size;//the size of the grouping
-
+    
     public GroupOfCards(int size) {
         this.size = size;
     }
@@ -41,7 +41,13 @@ public class GroupOfCards {
      *
      * @return the group of cards.
      */
-    public ArrayList<Card> getCards() {
+    public ArrayList<StandardCard> getCards() {
+        for(StandardCard.Suit s:StandardCard.Suit.values()){
+            for(StandardCard.Value v:StandardCard.Value.values()){
+                cards.add(new StandardCard(s,v));
+            }
+        }
+        shuffle();
         return cards;
     }
 
