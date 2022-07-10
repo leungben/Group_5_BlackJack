@@ -64,7 +64,7 @@ public class StandardCard extends Card{
     
     @Override
     public String toString() {
-        return "Suit:"+this.suit+"Value:"+this.value;
+        return "Suit:"+this.suit+" Value:"+this.value;
     }
     
     
