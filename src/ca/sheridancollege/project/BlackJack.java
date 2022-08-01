@@ -34,14 +34,6 @@ public class BlackJack extends Game {
         userCard.addCard();
         dealerCard.addCard();
         dealerCard.addCard();
-        //userCard.add(playCard.get(0));
-        //playCard.remove(0);
-        //userCard.add(playCard.get(0));
-        //playCard.remove(0);
-        //dealerCard.add(playCard.get(0));
-        //playCard.remove(0);
-        //dealerCard.add(playCard.get(0));
-        //playCard.remove(0);
         
         if(userCard.getDeck().get(0).getValue().getValues()+userCard.getDeck().get(0).getValue().getValues()==11){
             dealer();
@@ -79,19 +71,7 @@ public class BlackJack extends Game {
     public void hit() {
         userCard.addCard();
         Points userPoint = new Points(userCard);
-        /*int hitPoints=0;
-        Boolean hasAce=false;
-  
-        //userCard.add(playCard.get(0));
-        //playCard.remove(0);
-        
-        for(StandardCard y:userCard.getDeck()){
-            hitPoints+=y.getValue().getValues();
-            if(y.getValue().getValues()==1){
-                hasAce=true;
-            }
-        }
-        System.out.println(hitPoints);*/
+
         System.out.println(userPoint.getPoints());
         
         if(userPoint.getPoints()>21){
@@ -102,10 +82,6 @@ public class BlackJack extends Game {
             dealer();
             exit=false;
         }
-        /*else if(userPoint.getPoints()==11 && userPoint.getAce()==true){
-            dealer();
-            exit=false;
-        }*/
         else{
             exit=true;
         }
@@ -114,67 +90,11 @@ public class BlackJack extends Game {
     public void dealer() {
         Points userPoint = new Points(userCard);
         Points dealerPoint = new Points(dealerCard);//complete encapsulation via creating a seperate class called points, makes more cohesive and loosly coupled
-        
-        /*
-        int points=0;
-        int pointsD=0;
-        Boolean hasAce=false;
-        for(StandardCard v:userCard.getDeck()){
-            points+=v.getValue().getValues();
-            if(v.getValue().getValues()==1){
-                hasAce=true;
-            }
-        }
-        if(points<=11 && hasAce==true){
-            points+=10;
-        }
-        //System.out.println("User has "+points);
-        //Calculating Dealer points
-        for(StandardCard d:dealerCard.getDeck()){
-            pointsD+=d.getValue().getValues();
-            if(d.getValue().getValues()==1){
-                hasAce=true;
-            }
-        }
-        if(pointsD<=11 && hasAce==true && pointsD>=7){//if between 7-11 and card is Ace wil become 17-21(which is acceptable for dealer)
-            pointsD+=10;
-        }
-        //System.out.println("dealer has "+ pointsD);
-        //System.out.println(playCard.get(0).getValue().getValues());*/
-        //System.out.println("user has "+userPoint.getPoints()+"dealer has "+dealerPoint.getPoints());
+
         while(dealerPoint.getPoints() <=16){//below 16 is unaccetable for dealer assumping user hasnt busted yet
             dealerCard.addCard();
-            //System.out.println("user has "+userPoint.getPoints()+"dealer has "+dealerPoint.getPoints());
-            /*
-            if((playCard.get(0).getValue().getValues()==1 || hasAce==true && pointsD <=11)){//if gets an Ace/originall had an Ace and 
-                hasAce=true;//ex 2 + 2 + Ace =15/5
-                if(pointsD>=7){
-                    pointsD+=10;
-                    break;
-                }
-            }
-            pointsD+=playCard.get(0).getValue().getValues();
-            //System.out.println(playCard.get(0).getValue().getValues());
-            dealerCard.add(playCard.get(0));
-            playCard.remove(0);
-            //System.out.println("dealer has "+pointsD);
-            */
         }
         declareWinner();
-        //System.out.println("dealer has "+pointsD);
-        /*
-        if(dealerPoint.getPoints()>21){
-            declareWinner();
-        }
-        else if(userPoint.getPoints() == dealerPoint.getPoints()){
-            System.out.println("you have tied");
-        }
-        else if(userPoint.getPoints()>dealerPoint.getPoints()){
-            //declareWinner();
-        }
-        else{
-            //declareLoser();
-        }*/
         
     }
     
