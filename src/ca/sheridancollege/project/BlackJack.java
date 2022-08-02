@@ -18,8 +18,9 @@ public class BlackJack extends Game {
         super(name);
     }
     
-    //private GroupOfCards stackOfCards = new GroupOfCards(52);
-    //private ArrayList<StandardCard> playCard = stackOfCards.getCards();
+    public static GroupOfCards stackOfCards = new GroupOfCards(52);
+    public static ArrayList<StandardCard> playCard = stackOfCards.getCards();
+    
     private ArrayList<StandardCard> userCards = new ArrayList<StandardCard>();
     CardPicking userCard = new CardPicking(userCards);
     private ArrayList<StandardCard> dealerCards = new ArrayList<StandardCard>();

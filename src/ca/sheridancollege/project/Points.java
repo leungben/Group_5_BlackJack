@@ -33,8 +33,4 @@ public class Points {
         return points;
     }
     
-    public boolean getAce(){
-        return hasAce;
-    }
-
 }

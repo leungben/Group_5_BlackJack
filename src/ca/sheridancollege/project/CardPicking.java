@@ -5,6 +5,7 @@
 
 package ca.sheridancollege.project;
 
+import static ca.sheridancollege.project.BlackJack.playCard;
 import java.util.ArrayList;
 
 /**
@@ -13,8 +14,8 @@ import java.util.ArrayList;
  * @author Benedict Leung
  */
 public class CardPicking {
-    public GroupOfCards stackOfCards = new GroupOfCards(52);
-    public ArrayList<StandardCard> playCard = stackOfCards.getCards();
+    //public GroupOfCards stackOfCards = new GroupOfCards(52);
+    //public ArrayList<StandardCard> playCard = stackOfCards.getCards();
     private ArrayList<StandardCard> deck;
     
     public CardPicking(ArrayList<StandardCard> deck){
