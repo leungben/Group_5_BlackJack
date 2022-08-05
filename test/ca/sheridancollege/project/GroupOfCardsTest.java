@@ -39,7 +39,10 @@ public class GroupOfCardsTest {
     }
 
     /**
+     * Method to randomize the deck of Cards
      * Test of getCards method, of class GroupOfCards.
+     * Starts of the game with this method, will create a deck with 52 cards
+     * and ensures that cards are not in order
      */
     @Test
     public void testGetCards() {
@@ -59,7 +62,9 @@ public class GroupOfCardsTest {
 
 
     /**
+     * Method to get size of deck
      * Test of getSize method, of class GroupOfCards.
+     * Deck is set to 52, but can be changed based when creating object
      */
     @Test
     public void testGetSize() {

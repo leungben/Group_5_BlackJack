@@ -41,7 +41,11 @@ public class CardPickingTest {
     }
 
     /**
+     * Method is used to add card to player's hand
      * Test of addCard method, of class CardPicking.
+     * To Test, we will create a "cards" representing the player's current hand
+     * then we will add the first card from the deck "playCard" which we transferred via import
+     * and confirm that it is the same card that we grabbing when we use .addCard()
      */
     @Test
     public void testAddCard() {
@@ -55,14 +59,36 @@ public class CardPickingTest {
         
         assertEquals(expResult, result);
     }
+    
+        /**
+     * Method is used to add card to player's hand
+     * Test of addCard method, of class CardPicking.
+     * To Test, we will create a "cards" representing the player's current hand
+     * then we will add the Second card from the deck "playCard" which we transferred via import
+     * and confirm that it is must not be the same card that we grabbing when we use .addCard()
+     */
+    @Test
+    public void testAddTheSecondCard() {
+        ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
+        
+        System.out.println("addCard");
+        CardPicking instance = new CardPicking(cards);
+        ArrayList<StandardCard> expResult = new ArrayList<StandardCard>();
+        expResult.add(playCard.get(1));
+        ArrayList<StandardCard> result = instance.addCard();
+        
+        assertNotSame(expResult, result);
+    }
 
     /**
+     * Method is used to obtain the Player's Current Deck or Hand
      * Test of getDeck method, of class CardPicking.
+     * Creates an object that will hold what the player currently has/ what the dealer has
+     * Inserts One card Into deck/hand,
+     * Array with that one card is equivalent to the card I placed in 
      */
     @Test
     public void testGetDeck() {
-        GroupOfCards stackOfCards = new GroupOfCards(52);
-        ArrayList<StandardCard> playCard = stackOfCards.getCards();
         ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
         cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("ACE")));
         
@@ -72,5 +98,6 @@ public class CardPickingTest {
         ArrayList<StandardCard> result = instance.getDeck();
         assertEquals(expResult, result);
     }
+
     
 }

@@ -54,7 +54,8 @@ public class BlackJack extends Game {
             int choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    hit();
+                    userCard.addCard();
+                    exit = hit(userCard);
                     break;
                 case 2:
                     dealer();
@@ -69,22 +70,21 @@ public class BlackJack extends Game {
 
 
 
-    public void hit() {
-        userCard.addCard();
+    public Boolean hit(CardPicking userCard) {
         Points userPoint = new Points(userCard);
 
         System.out.println(userPoint.getPoints());
         
         if(userPoint.getPoints()>21){
             declareWinner();
-            exit=false;
+            return false;
         }
         else if(userPoint.getPoints()==21){
             dealer();
-            exit=false;
+            return false;
         }
         else{
-            exit=true;
+            return true;
         }
     }
 
