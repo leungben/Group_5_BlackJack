@@ -4,7 +4,7 @@
  */
 package ca.sheridancollege.project;
 
-import static ca.sheridancollege.project.BlackJack.playCard;
+import ca.sheridancollege.project.CardPicking.*;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -54,7 +54,7 @@ public class CardPickingTest {
         System.out.println("addCard");
         CardPicking instance = new CardPicking(cards);
         ArrayList<StandardCard> expResult = new ArrayList<StandardCard>();
-        expResult.add(playCard.get(0));
+        expResult.add(instance.playCard.get(0));
         ArrayList<StandardCard> result = instance.addCard();
         
         assertEquals(expResult, result);
@@ -74,7 +74,7 @@ public class CardPickingTest {
         System.out.println("addCard");
         CardPicking instance = new CardPicking(cards);
         ArrayList<StandardCard> expResult = new ArrayList<StandardCard>();
-        expResult.add(playCard.get(1));
+        expResult.add(instance.playCard.get(1));
         ArrayList<StandardCard> result = instance.addCard();
         
         assertNotSame(expResult, result);

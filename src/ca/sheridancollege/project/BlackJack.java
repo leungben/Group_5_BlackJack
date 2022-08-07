@@ -18,8 +18,8 @@ public class BlackJack extends Game {
         super(name);
     }
     
-    public static GroupOfCards stackOfCards = new GroupOfCards(52);
-    public static ArrayList<StandardCard> playCard = stackOfCards.getCards();
+    //public GroupOfCards stackOfCards = new GroupOfCards(52);
+    //public ArrayList<StandardCard> playCard = stackOfCards.getCards();
     
     private ArrayList<StandardCard> userCards = new ArrayList<StandardCard>();
     CardPicking userCard = new CardPicking(userCards);
@@ -50,6 +50,7 @@ public class BlackJack extends Game {
             for (StandardCard x : userCard.getDeck()) {
                 System.out.print(", " + x);
             }
+
             System.out.println("\nPress 1 for hit, 2 for stay");
             int choice = input.nextInt();
             switch (choice) {
