@@ -46,7 +46,7 @@ public class PointsTest {
      * Test of getPoints method, of class Points.
      */
     @Test
-    public void testGetPoints() {
+    public void testGetPoints21() {
         System.out.println("getPoints");
         ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
         cards.add(new StandardCard(HEARTS,ACE));
@@ -62,7 +62,7 @@ public class PointsTest {
      * Test of getPoints method, of class Points.
      */
     @Test
-    public void testGetPoints2() {
+    public void testGetPointsOk() {
         System.out.println("getPoints");
         ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
         cards.add(new StandardCard(HEARTS,ACE));
@@ -75,7 +75,7 @@ public class PointsTest {
         assertEquals(expResult, result);
     }
         @Test
-    public void testGetPoints3() {
+    public void testGetPointsBust() {
         System.out.println("getPoints");
         ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
         cards.add(new StandardCard(HEARTS,QUEEN));

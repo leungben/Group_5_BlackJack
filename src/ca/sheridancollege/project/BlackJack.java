@@ -45,13 +45,21 @@ public class BlackJack extends Game {
         //System.out.println("You see dealer has one card faced up" + dealerCard.get(1).getSuit() + dealerCard.get(1).getValue());
         //System.out.println("Your cards are" + userCard.get(0).getSuit() + userCard.get(0).getValue() + " , " + userCard.get(1).getSuit() + userCard.get(1).getValue());
         while (exit) {
-            System.out.println("You see Dealer has one card faced up: " + dealerCard.getDeck().get(1).getSuit() + " " + dealerCard.getDeck().get(1).getValue() + "");
+            System.out.println("\nYou see Dealer has one card faced up: " + dealerCard.getDeck().get(1).getSuit() + " " + dealerCard.getDeck().get(1).getValue() + "");
             System.out.print("Your cards are");
             for (StandardCard x : userCard.getDeck()) {
                 System.out.print(", " + x);
             }
-
-            System.out.println("\nPress 1 for hit, 2 for stay");
+  
+            Points uPoint = new Points(userCard);
+            System.out.println("\nDealer currently has: " +dealerCard.getDeck().get(1).getValue().getValues());
+            System.out.println("Your current points is: "+uPoint.getPoints());
+            if(uPoint.getPoints()<17){
+                System.out.println("Press 1 for hit, 2 for stay; (SINCERELY SUGGEST YOU TO HIT)");
+            }
+            else{
+                System.out.println("Press 1 for hit, 2 for stay; (SINCERELY SUGGEST YOU TO STAY)");
+            }
             int choice = input.nextInt();
             switch (choice) {
                 case 1:
@@ -126,12 +134,15 @@ public class BlackJack extends Game {
         System.out.print("Dealer cards are");
         for (StandardCard v : dealerCard.getDeck()) {
             System.out.print(", " + v);
+            
         }
+        System.out.println("\nDealer has :" +dealerPoint.getPoints() +"points");
         System.out.println();
         System.out.print("Your cards are");
         for (StandardCard x : userCard.getDeck()) {
             System.out.print(", " + x);
         }
+        System.out.println("\nYou have :"+ userPoint.getPoints()+"points");
         System.out.println("\n===============================================================================");
     }
     

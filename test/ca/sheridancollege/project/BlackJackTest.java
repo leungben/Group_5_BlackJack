@@ -102,7 +102,7 @@ public class BlackJackTest {
         assertEquals(expResult, result);
     }
     
-           /**
+    /**
      * Method of hitting, gives a card prior to hitting
      * Test of hit method, of class BlackJack.
      * Determines based on Ace and Queen whether he busts or not and the game finishes
@@ -209,6 +209,277 @@ public class BlackJackTest {
         assertTrue(result>0);
  
     }
-
     
+     /**
+     * Test of declareWinner method, of class BlackJack.
+     * Again only way to test is by copying code without starting entire instance
+     * 
+     */
+    @Test
+    public void testDeclareWinner() {
+        System.out.println("declareWinner");
+        String result;
+        ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("ACE")));
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("QUEEN")));
+        ArrayList<StandardCard> cards2 = new ArrayList<StandardCard>();
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("KING")));
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("QUEEN")));
+        CardPicking uCard = new CardPicking(cards);
+        CardPicking dCard = new CardPicking(cards2);
+        
+        //start of copy and pasting of method to test if function works
+        Points userPoint = new Points(uCard);
+        Points dealerPoint = new Points(dCard);
+        if(userPoint.getPoints()>21){
+            result=("You Busted");
+        }
+        else if(dealerPoint.getPoints()>21){
+            result=("Dealer has Busted you have won");
+        }
+        else if(userPoint.getPoints()==dealerPoint.getPoints()){
+            result=("You have tied, no win or lose ... kinda lost");
+        }
+        else if(userPoint.getPoints()<dealerPoint.getPoints()){
+            result=("You Lost");
+        }
+        else if(userPoint.getPoints()>dealerPoint.getPoints()){
+            result=("you win");
+        }
+        else{
+            result=("something has gone wrong...");
+        }
+        //end of copy and pasted testing
+        String expResult="you win";
+        
+        assertEquals(expResult, result);
+    }
+    
+         /**
+     * Test of declareWinner method, of class BlackJack.
+     * Again only way to test is by copying code without starting entire instance
+     * 
+     */
+    @Test
+    public void testDeclareLoser() {
+        System.out.println("declareWinner");
+        String result;
+        ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("KING")));
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("QUEEN")));
+        ArrayList<StandardCard> cards2 = new ArrayList<StandardCard>();
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("ACE")));
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("QUEEN")));
+        CardPicking uCard = new CardPicking(cards);
+        CardPicking dCard = new CardPicking(cards2);
+        
+        //start of copy and pasting of method to test if function works
+        Points userPoint = new Points(uCard);
+        Points dealerPoint = new Points(dCard);
+        if(userPoint.getPoints()>21){
+            result=("You Busted");
+        }
+        else if(dealerPoint.getPoints()>21){
+            result=("Dealer has Busted you have won");
+        }
+        else if(userPoint.getPoints()==dealerPoint.getPoints()){
+            result=("You have tied, no win or lose ... kinda lost");
+        }
+        else if(userPoint.getPoints()<dealerPoint.getPoints()){
+            result=("You Lost");
+        }
+        else if(userPoint.getPoints()>dealerPoint.getPoints()){
+            result=("you win");
+        }
+        else{
+            result=("something has gone wrong...");
+        }
+        //end of copy and pasted testing
+        String expResult="You Lost";
+        
+        assertEquals(expResult, result);
+    }
+    
+             /**
+     * Test of declareWinner method, of class BlackJack.
+     * Again only way to test is by copying code without starting entire instance
+     * 
+     */
+    @Test
+    public void testDeclareTIE() {
+        System.out.println("declareWinner");
+        String result;
+        ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("KING")));
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("QUEEN")));
+        ArrayList<StandardCard> cards2 = new ArrayList<StandardCard>();
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("KING")));
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("QUEEN")));
+        CardPicking uCard = new CardPicking(cards);
+        CardPicking dCard = new CardPicking(cards2);
+        
+        //start of copy and pasting of method to test if function works
+        Points userPoint = new Points(uCard);
+        Points dealerPoint = new Points(dCard);
+        if(userPoint.getPoints()>21){
+            result=("You Busted");
+        }
+        else if(dealerPoint.getPoints()>21){
+            result=("Dealer has Busted you have won");
+        }
+        else if(userPoint.getPoints()==dealerPoint.getPoints()){
+            result=("You have tied, no win or lose ... kinda lost");
+        }
+        else if(userPoint.getPoints()<dealerPoint.getPoints()){
+            result=("You Lost");
+        }
+        else if(userPoint.getPoints()>dealerPoint.getPoints()){
+            result=("you win");
+        }
+        else{
+            result=("something has gone wrong...");
+        }
+        //end of copy and pasted testing
+        String expResult="You have tied, no win or lose ... kinda lost";
+        
+        assertEquals(expResult, result);
+    }
+    
+                 /**
+     * Test of declareWinner method, of class BlackJack.
+     * Again only way to test is by copying code without starting entire instance
+     * 
+     */
+    @Test
+    public void testDeclareBusted() {
+        System.out.println("declareWinner");
+        String result;
+        ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("KING")));
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("QUEEN")));
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("JACK")));
+        ArrayList<StandardCard> cards2 = new ArrayList<StandardCard>();
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("KING")));
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("QUEEN")));
+        CardPicking uCard = new CardPicking(cards);
+        CardPicking dCard = new CardPicking(cards2);
+        
+        //start of copy and pasting of method to test if function works
+        Points userPoint = new Points(uCard);
+        Points dealerPoint = new Points(dCard);
+        if(userPoint.getPoints()>21){
+            result=("You Busted");
+        }
+        else if(dealerPoint.getPoints()>21){
+            result=("Dealer has Busted you have won");
+        }
+        else if(userPoint.getPoints()==dealerPoint.getPoints()){
+            result=("You have tied, no win or lose ... kinda lost");
+        }
+        else if(userPoint.getPoints()<dealerPoint.getPoints()){
+            result=("You Lost");
+        }
+        else if(userPoint.getPoints()>dealerPoint.getPoints()){
+            result=("you win");
+        }
+        else{
+            result=("something has gone wrong...");
+        }
+        //end of copy and pasted testing
+        String expResult="You Busted";
+        
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of declareWinner method, of class BlackJack.
+     * Again only way to test is by copying code without starting entire instance
+     * 
+     */
+    @Test
+    public void testDeclareDBusted() {
+        System.out.println("declareWinner");
+        String result;
+        ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("KING")));
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("QUEEN")));
+        ArrayList<StandardCard> cards2 = new ArrayList<StandardCard>();
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("KING")));
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("QUEEN")));
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("JACK")));
+        CardPicking uCard = new CardPicking(cards);
+        CardPicking dCard = new CardPicking(cards2);
+        
+        //start of copy and pasting of method to test if function works
+        Points userPoint = new Points(uCard);
+        Points dealerPoint = new Points(dCard);
+        if(userPoint.getPoints()>21){
+            result=("You Busted");
+        }
+        else if(dealerPoint.getPoints()>21){
+            result=("Dealer has Busted you have won");
+        }
+        else if(userPoint.getPoints()==dealerPoint.getPoints()){
+            result=("You have tied, no win or lose ... kinda lost");
+        }
+        else if(userPoint.getPoints()<dealerPoint.getPoints()){
+            result=("You Lost");
+        }
+        else if(userPoint.getPoints()>dealerPoint.getPoints()){
+            result=("you win");
+        }
+        else{
+            result=("something has gone wrong...");
+        }
+        //end of copy and pasted testing
+        String expResult="Dealer has Busted you have won";
+        
+        assertEquals(expResult, result);
+    }
+                         /**
+     * Test of declareWinner method, of class BlackJack.
+     * Again only way to test is by copying code without starting entire instance
+     * 
+     */
+    @Test
+    public void testDeclareBothBusted() {
+        System.out.println("declareWinner");
+        String result;
+        ArrayList<StandardCard> cards = new ArrayList<StandardCard>();
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("KING")));
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("QUEEN")));
+        cards.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("JACK")));
+        ArrayList<StandardCard> cards2 = new ArrayList<StandardCard>();
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("KING")));
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("SPADES"),StandardCard.Value.valueOf("QUEEN")));
+        cards2.add(new StandardCard(StandardCard.Suit.valueOf("HEARTS"),StandardCard.Value.valueOf("JACK")));
+        CardPicking uCard = new CardPicking(cards);
+        CardPicking dCard = new CardPicking(cards2);
+        
+        //start of copy and pasting of method to test if function works
+        Points userPoint = new Points(uCard);
+        Points dealerPoint = new Points(dCard);
+        if(userPoint.getPoints()>21){
+            result=("You Busted");
+        }
+        else if(dealerPoint.getPoints()>21){
+            result=("Dealer has Busted you have won");
+        }
+        else if(userPoint.getPoints()==dealerPoint.getPoints()){
+            result=("You have tied, no win or lose ... kinda lost");
+        }
+        else if(userPoint.getPoints()<dealerPoint.getPoints()){
+            result=("You Lost");
+        }
+        else if(userPoint.getPoints()>dealerPoint.getPoints()){
+            result=("you win");
+        }
+        else{
+            result=("something has gone wrong...");
+        }
+        //end of copy and pasted testing
+        String expResult="You Busted";
+        
+        assertEquals(expResult, result);
+    }
 }
